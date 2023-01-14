@@ -139,13 +139,12 @@ class PatientController {
   // Fungsi positive menampilakan data pasien berdasarkan status positive
   async positive(req, res) {
     const patient = await Patient.findByStatus("positive");
-    // const total = await Patient.totalData("positive");
 
     if (patient) {
       const data = {
         message: `Get positive source`,
         data: patient,
-        total: patient.lenght,
+        total: patient.length,
       };
 
       res.status(200).json(data);
@@ -166,6 +165,7 @@ class PatientController {
       const data = {
         message: `Get recovered resource`,
         data: patient,
+        total: patient.length,
       };
 
       res.status(200).json(data);
@@ -187,6 +187,7 @@ class PatientController {
       const data = {
         message: `Get dead resource`,
         data: patient,
+        total: patient.length,
       };
 
       res.status(200).json(data);

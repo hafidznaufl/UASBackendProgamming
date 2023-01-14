@@ -93,16 +93,6 @@ class Patient {
       });
     });
   }
-
-  static async totalData(status) {
-    return new Promise((resolve, reject) => {
-      const query = `SELECT COUNT(*) FROM patiens WHERE status = ?`;
-
-      db.query(query, status, (err, results) => {
-        resolve(results);
-      });
-    });
-  }
 }
 
 // export class Patient
