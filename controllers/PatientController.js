@@ -180,7 +180,7 @@ class PatientController {
 
   // Fungsi dead menampilakan data pasien berdasarkan status dead
   async dead(req, res) {
-    const { status } = req.params;
+
     const patient = await Patient.findByStatus("dead");
 
     if (patient) {
